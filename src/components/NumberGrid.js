@@ -14,7 +14,7 @@ const LottoNumber = ({ number, handleSelectNumber }) => {
 
 const NumberGrid = ({ handleSelectNumber }) => {
   const lottoNumbers = arrayOfLottoNumbers(40);
-  console.log("lottonumbers array:", lottoNumbers);
+  //console.log("lottonumbers array:", lottoNumbers);
   
   return (
     <div>
