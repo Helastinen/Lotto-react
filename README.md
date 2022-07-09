@@ -1,3 +1,36 @@
+## Continue from here
+- add button "Start lottery".
+- randomize selected winning numbers.
+- Show winning numbers to user.
+
+## Purpose
+- Learn to create a single page react app in practise
+- Learn to use backend that connects to db
+- learn to create UI using a CDN
+
+## MVP
+1. User can select lotto numbers. App draws random lotto numbers. User sees how many numbers are correct.
+-- user can only select seven numbers. Show error message, if user tries to select more than seven.
+2. Nice UI for app (use CDN).
+3. User can select amount of money she bets.
+4. User sees history of lottonumbers being drawn.
+
+## States
+- Drawed seven numbers, array, e.g. [1, 4, 12, 23, 24, 29, 36]
+- User selected numbers, array, e.g. [2, 7, 13, 23, 27, 30, 32]
+
+## UI
+- number icons, can be selected
+- Start lotto button
+- reset selection button
+
+## Components
+- App
+  - NumberGrid
+    - Number
+  - UserButtons
+  - InfoBox
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

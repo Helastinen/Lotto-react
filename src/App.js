@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import{ useState } from  "react";
 
-function App() {
+import NumberGrid from "./components/NumberGrid";
+import UserNumbers from "./components/UserNumbers";
+
+function App () {
+  const [selectedNumbers, setSelectedNumbers] = useState([]);
+
+  const handleSelectNumber = (event) => {
+    setSelectedNumbers(selectedNumbers.concat(event.target.value));
+    console.log("button", event.target.value, "selected");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Lotto App</h1>
+      Select your <b>seven</b> lucky lotto numbers!
+      <NumberGrid handleSelectNumber={handleSelectNumber} /><br /><br />
+      <UserNumbers selectedNumbers={selectedNumbers} />
     </div>
   );
 }
