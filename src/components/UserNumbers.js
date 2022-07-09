@@ -6,9 +6,12 @@ const UserNumbers = ({ selectedNumbers }) => {
   return (
     <div>
       User's numbers:{' '}
-      {selectedNumbers.map(number => 
-        <UserNumber number={number} /> 
-      )}
+      {selectedNumbers
+        .sort((a, b) => a - b)
+        .map(number => 
+          <UserNumber key={number} number={number} /> 
+        )    
+      }
     </div>
   )
 };
