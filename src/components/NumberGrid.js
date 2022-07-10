@@ -1,4 +1,4 @@
-import numberPool from "../utils";
+import { numberPool } from "../utils";
 import configData from "../configData.json";
 
 const LottoNumber = ({ number, handleSelectNumber }) => {

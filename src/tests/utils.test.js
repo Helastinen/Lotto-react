@@ -1,9 +1,6 @@
-import React from "react";
 import "@testing-library/jest-dom/extend-expect";
-import { render, screen } from "@testing-library/react";
 
-import numberPool from "../utils";
-import NumberGrid from "./NumberGrid";
+import { numberPool, isDistinctNumber } from "../utils";
 
 const expectedNumberPool = [
   1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
@@ -17,8 +14,11 @@ test("numberPool creates 40 lottonumbers", () => {
   expect(lottoNumbers).toEqual(expectedNumberPool);
 });
 
-test("NumberGrid renders 40 lottonumbers", () => {
-  render(<NumberGrid />);
-  const element = screen.getByText(40);
-  expect(element).toBeDefined();
+test("isDistinctNumber User can select only distinct numbers", () => {
+  const selectedNumbers = [1, 3, 5, 12, 15, 22, 39];
+  const distinctNumber = 2;
+  const nonDistinctNumber = 3;
+  
+  expect(isDistinctNumber(nonDistinctNumber, selectedNumbers)).toEqual(false);
+  expect(isDistinctNumber(distinctNumber, selectedNumbers)).toEqual(true);
 });
