@@ -8,5 +8,5 @@ test("NumberGrid renders 40 lottonumbers", () => {
 	render(<NumberGrid />);
 	const element = screen.getByText(40);
 	expect(element).toBeDefined();
-	screen.debug();
+	screen.debug(element);
 });

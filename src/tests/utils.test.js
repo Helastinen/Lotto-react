@@ -30,10 +30,9 @@ test("isDistinctNumber() returns true for distinct numbers and false for non-dis
 });
 
 test("hasReachedNumberLimit() returns true when number limit is hit", () => {
-	const numberLimitReached = 7;
-	const numberLimitNotReached = 6;
+	const numberLimit = 7;
+	const sixSelectedNumbers = [1, 3, 5, 12, 15, 22 ];
 
-
-	expect(hasReachedNumberLimit(numberLimitReached, selectedNumbers)).toEqual(true);
-	expect(hasReachedNumberLimit(numberLimitNotReached, selectedNumbers)).toEqual(false);
+	expect(hasReachedNumberLimit(numberLimit, selectedNumbers)).toEqual(true);
+	expect(hasReachedNumberLimit(numberLimit, sixSelectedNumbers)).toEqual(false);
 });

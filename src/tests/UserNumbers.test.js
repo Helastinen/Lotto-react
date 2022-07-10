@@ -10,6 +10,7 @@ test("Users selected numbers show in UI", () => {
 
 	const element = screen.getByText(/1, 3, 5, 12, 15, 22, 39/);
 	expect(element).toBeDefined();
+	screen.debug(element);
 });
 
 test("User's numbers are sorted ascendingly", () => {
