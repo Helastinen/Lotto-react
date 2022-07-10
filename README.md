@@ -1,9 +1,8 @@
 ## Continue from here
-- user can not select same lottonumber twice.
-- user can only select seven lottonumbers
 - add button "Start lottery".
 - randomize selected winning numbers.
 - Show winning numbers to user.
+- user can change number selection
 
 ## Purpose
 - Learn to create a single page react app in practise
@@ -14,8 +13,12 @@
 1. User can select lotto numbers. App draws random lotto numbers. User sees how many numbers are correct.
 -- user can only select seven numbers. Show error message, if user tries to select more than seven.
 2. Nice UI for app (use CDN).
-3. User can select amount of money she bets.
-4. User sees history of lottonumbers being drawn.
+3. Implement error handling messages (remove alert boxes).
+4. User can select amount of money she bets.
+5. User sees history of lottonumbers being drawn.
+
+## Nice to have
+- user can 
 
 ## States
 - Drawed seven numbers, array, e.g. [1, 4, 12, 23, 24, 29, 36]

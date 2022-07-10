@@ -13,7 +13,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "eslintConfig": {
     "extends": [
@@ -35,6 +36,8 @@
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0"
+    "@testing-library/react": "^13.3.0",
+    "eslint": "^8.19.0",
+    "eslint-plugin-react": "^7.30.1"
   }
 }

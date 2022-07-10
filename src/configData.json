@@ -1,4 +1,5 @@
 {
 "numberPool": 40,
-"winningNumbers": 7
+"selectedNumberAmount": 7,
+"winningNumberAmount": 7
 }
