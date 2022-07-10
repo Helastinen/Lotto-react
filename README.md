@@ -1,5 +1,4 @@
 ## Continue from here
-- add config for amount of lottonumbers and user numbers.
 - user can not select same lottonumber twice.
 - user can only select seven lottonumbers
 - add button "Start lottery".

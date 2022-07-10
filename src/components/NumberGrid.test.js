@@ -2,7 +2,7 @@ import React from "react";
 import "@testing-library/jest-dom/extend-expect";
 import { render, screen } from "@testing-library/react";
 
-import arrayOfLottoNumbers from "../utils";
+import numberPool from "../utils";
 import NumberGrid from "./NumberGrid";
 
 const expectedNumberPool = [
@@ -12,8 +12,8 @@ const expectedNumberPool = [
   31, 32, 33, 34, 35, 36, 37, 38, 39, 40
 ];
 
-test("arrayOfLottoNumbers creates 40 lottonumbers", () => {
-  const lottoNumbers = arrayOfLottoNumbers(40);
+test("numberPool creates 40 lottonumbers", () => {
+  const lottoNumbers = numberPool(40);
   expect(lottoNumbers).toEqual(expectedNumberPool);
 });
 

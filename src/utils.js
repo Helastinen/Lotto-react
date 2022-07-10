@@ -1,5 +1,5 @@
-const arrayOfLottoNumbers = (numberAmount) => {
+const numberPool = (numberAmount) => {
   return [...Array(numberAmount).keys()].map(n => ++n);
 };
 
-export default arrayOfLottoNumbers;
+export default numberPool;
