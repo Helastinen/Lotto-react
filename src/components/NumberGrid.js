@@ -1,4 +1,5 @@
 import arrayOfLottoNumbers from "../utils";
+import configData from "../configData.json";
 
 const LottoNumber = ({ number, handleSelectNumber }) => {
   return (
@@ -13,7 +14,7 @@ const LottoNumber = ({ number, handleSelectNumber }) => {
 };
 
 const NumberGrid = ({ handleSelectNumber }) => {
-  const lottoNumbers = arrayOfLottoNumbers(40);
+  const lottoNumbers = arrayOfLottoNumbers(configData.numberPool);
   //console.log("lottonumbers array:", lottoNumbers);
   
   return (

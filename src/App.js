@@ -15,7 +15,7 @@ function App () {
     <div>
       <h1>Lotto App</h1>
       Select your <b>seven</b> lucky lotto numbers!
-      <NumberGrid handleSelectNumber={handleSelectNumber} /><br /><br />
+      <NumberGrid handleSelectNumber={handleSelectNumber} />
       <UserNumbers selectedNumbers={selectedNumbers} />
     </div>
   );

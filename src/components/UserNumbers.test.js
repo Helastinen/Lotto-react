@@ -4,7 +4,7 @@ import { render, screen } from "@testing-library/react";
 
 import UserNumbers from "./UserNumbers";
 
-test("User can select number from pool", () => {
+test("Users selected numbers show in UI", () => {
   const selectedNumbers = [1, 3, 5, 12, 15, 22, 39];
   render(<UserNumbers selectedNumbers={selectedNumbers} />);
  
