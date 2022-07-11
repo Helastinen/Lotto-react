@@ -4,7 +4,8 @@ import "@testing-library/jest-dom/extend-expect";
 import {
 	numberPool,
 	isDistinctNumber,
-	hasReachedNumberLimit
+	hasReachedNumberLimit,
+	randomWinningNumbers
 } from "../utils";
 
 const expectedNumberPool = [
@@ -15,6 +16,7 @@ const expectedNumberPool = [
 ];
 
 const selectedNumbers = [1, 3, 5, 12, 15, 22, 39];
+const numberLimit = 7;
 
 test("numberPool() creates 40 lottonumbers", () => {
 	const lottoNumbers = numberPool(40);
@@ -30,9 +32,17 @@ test("isDistinctNumber() returns true for distinct numbers and false for non-dis
 });
 
 test("hasReachedNumberLimit() returns true when number limit is hit", () => {
-	const numberLimit = 7;
 	const sixSelectedNumbers = [1, 3, 5, 12, 15, 22 ];
 
 	expect(hasReachedNumberLimit(numberLimit, selectedNumbers)).toEqual(true);
 	expect(hasReachedNumberLimit(numberLimit, sixSelectedNumbers)).toEqual(false);
+});
+
+test("randomWinningNumbers() returns seven distinct winning numbers", () => {
+	const winningNumbers = randomWinningNumbers(numberLimit, expectedNumberPool);
+	expect(winningNumbers).toHaveLength(numberLimit);
+
+	const winningNumbersSet = new Set(winningNumbers);
+	console.log("winningNumbersSet:", winningNumbersSet);
+	expect(winningNumbersSet.size).toEqual(winningNumbers.length);
 });
