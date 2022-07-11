@@ -2,11 +2,11 @@ const UserNumber = ({ number }) => {
 	return `${number}, `;
 };
 
-const UserNumbers = ({ selectedNumbers }) => {
+const UsersNumbers = ({ usersNumbers }) => {
 	return (
 		<div>
       User`s numbers:{" "}
-			{selectedNumbers
+			{usersNumbers
 				.sort((a, b) => a - b)
 				.map(number =>
 					<UserNumber key={number} number={number} />
@@ -16,4 +16,4 @@ const UserNumbers = ({ selectedNumbers }) => {
 	);
 };
 
-export default UserNumbers;
+export default UsersNumbers;

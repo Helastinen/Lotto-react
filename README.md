@@ -1,7 +1,7 @@
 ## Continue from here
-- Add button "Start lottery".
+- Add button "Start lottery". DONE
 - Randomize selected winning numbers. DONE
-- Show winning numbers to user.
+- Show winning numbers to user. DONE
 - User can change number selection.
 
 ## Purpose

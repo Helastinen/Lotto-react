@@ -2,7 +2,7 @@
 import "@testing-library/jest-dom/extend-expect";
 import { render, screen } from "@testing-library/react";
 
-import UserNumbers from "../components/UserNumbers";
+import UserNumbers from "../components/UsersNumbers";
 
 test("Users selected numbers show in UI", () => {
 	const selectedNumbers = [1, 3, 5, 12, 15, 22, 39];
