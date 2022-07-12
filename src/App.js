@@ -20,8 +20,8 @@ function App () {
 			return alert(`Number ${event.target.value} has already been selected!`);
 		}
 
-		if ( hasReachedNumberLimit(configData.selectedNumberAmount, usersNumbers) ) {
-			return alert(`You have already selected all ${configData.selectedNumberAmount} lotto numbers!`);
+		if ( hasReachedNumberLimit(configData.usersSelectedNumberAmount, usersNumbers) ) {
+			return alert(`You have already selected all ${configData.usersSelectedNumberAmount} lotto numbers!`);
 		}
 
 		setUsersNumbers(usersNumbers.concat(event.target.value));
@@ -29,8 +29,8 @@ function App () {
 	};
 
 	const handleStartLottery = () => {
-		if ( !hasReachedNumberLimit(configData.selectedNumberAmount, usersNumbers) ) {
-			return alert(`Please select all ${configData.selectedNumberAmount} lotto numbers!`);
+		if ( !hasReachedNumberLimit(configData.usersSelectedNumberAmount, usersNumbers) ) {
+			return alert(`Please select all ${configData.usersSelectedNumberAmount} lotto numbers!`);
 		}
 
 		const numbers = randomWinningNumbers(configData.winningNumberAmount, numberPool(configData.numberPool));
