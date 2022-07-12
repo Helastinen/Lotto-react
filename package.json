@@ -1,5 +1,10 @@
 {
   "name": "lottokone-react",
+  "jest": {
+    "collectCoverageFrom" : [
+      "src/**/*.{js,jsx}"
+    ]
+  },
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -14,7 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "coverage": "npm run test -- --coverage --watchAll"
   },
   "eslintConfig": {
     "extends": [
