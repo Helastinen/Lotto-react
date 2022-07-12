@@ -24,7 +24,7 @@ function App () {
 			return alert(`You have already selected all ${configData.usersSelectedNumberAmount} lotto numbers!`);
 		}
 
-		setUsersNumbers(usersNumbers.concat(event.target.value));
+		setUsersNumbers(usersNumbers.concat(Number(event.target.value)));
 		console.log("button", event.target.value, "selected");
 	};
 
