@@ -15,7 +15,7 @@ const expectedNumberPool = [
 	31, 32, 33, 34, 35, 36, 37, 38, 39, 40
 ];
 
-const selectedNumbers = [1, 3, 5, 12, 15, 22, 39];
+const usersNumbers = [1, 3, 5, 12, 15, 22, 39];
 const numberLimit = 7;
 
 test("numberPool() creates 40 lottonumbers", () => {
@@ -27,15 +27,15 @@ test("isDistinctNumber() returns true for distinct numbers and false for non-dis
 	const distinctNumber = 2;
 	const nonDistinctNumber = 3;
 
-	expect(isDistinctNumber(nonDistinctNumber, selectedNumbers)).toEqual(false);
-	expect(isDistinctNumber(distinctNumber, selectedNumbers)).toEqual(true);
+	expect(isDistinctNumber(nonDistinctNumber, usersNumbers)).toEqual(false);
+	expect(isDistinctNumber(distinctNumber, usersNumbers)).toEqual(true);
 });
 
 test("hasReachedNumberLimit() returns true when number limit is hit", () => {
-	const sixSelectedNumbers = [1, 3, 5, 12, 15, 22 ];
+	const sixUsersNumbers = [1, 3, 5, 12, 15, 22 ];
 
-	expect(hasReachedNumberLimit(numberLimit, selectedNumbers)).toEqual(true);
-	expect(hasReachedNumberLimit(numberLimit, sixSelectedNumbers)).toEqual(false);
+	expect(hasReachedNumberLimit(numberLimit, usersNumbers)).toEqual(true);
+	expect(hasReachedNumberLimit(numberLimit, sixUsersNumbers)).toEqual(false);
 });
 
 test("randomWinningNumbers() returns seven distinct winning numbers", () => {
