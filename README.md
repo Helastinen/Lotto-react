@@ -1,8 +1,9 @@
 ## Continue from here
-- Add button "Start lottery". DONE
-- Randomize selected winning numbers. DONE
-- Show winning numbers to user. DONE
+- fix tests
 - User can change number selection.
+- UI: button toggle for users selected numbers
+- check flexbox for usernumbers
+- user's Winning numbers are highlighted/shown.
 
 ## Purpose
 - Learn to create a single page react app in practise

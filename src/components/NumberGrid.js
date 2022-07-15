@@ -1,15 +1,24 @@
+import { Button, List, ListItem } from "@mui/material";
+
 import { numberPool } from "../utils";
 import configData from "../configData.json";
 
 const LottoNumber = ({ number, handleSelectNumber }) => {
 	return (
-		<li style={{
-			float: "left",
+		<ListItem style={{
+			display: "inline",
 			listStyleType: "none",
 			padding: 5,
+			margin: 5,
 		}}>
-			<button value={number} onClick={handleSelectNumber}>{number}</button>
-		</li>
+			<Button
+				variant="outlined"
+				value={number}
+				onClick={handleSelectNumber}
+			>
+				{number}
+			</Button>
+		</ListItem>
 	);
 };
 
@@ -19,7 +28,7 @@ const NumberGrid = ({ handleSelectNumber }) => {
 
 	return (
 		<div>
-			<ul>
+			<List>
 				{lottoNumbers.map(number =>
 					<LottoNumber
 						key={number}
@@ -27,7 +36,7 @@ const NumberGrid = ({ handleSelectNumber }) => {
 						handleSelectNumber={handleSelectNumber}
 					/>
 				)}
-			</ul>
+			</List>
 		</div>
 	);
 };

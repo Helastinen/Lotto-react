@@ -1,11 +1,17 @@
+import { Button, Typography } from "@mui/material";
+
 const UserNumber = ({ number }) => {
-	return `${number}, `;
+	return (
+		<Button variant="contained" color="secondary">
+			{number}
+		</Button>
+	);
 };
 
 const UsersNumbers = ({ usersNumbers }) => {
 	return (
 		<div>
-      User`s numbers:{" "}
+			<Typography variant="h5" m={1}>Your numbers:{" "}</Typography>
 			{usersNumbers
 				.sort((a, b) => a - b)
 				.map(number =>
