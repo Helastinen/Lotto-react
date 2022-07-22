@@ -23,7 +23,7 @@ function App () {
 	const [winningNumbers, setWinningNumbers] = useState([]);
 
 	const handleSelectNumber = (event) => {
-		if ( !isDistinctNumber(event.target.value, usersNumbers) ) {
+		if ( !isDistinctNumber(Number(event.target.value), usersNumbers) ) {
 			return alert(`Number ${event.target.value} has already been selected!`);
 		}
 
