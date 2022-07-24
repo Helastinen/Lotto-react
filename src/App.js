@@ -1,13 +1,12 @@
 import{ useState } from  "react";
 import {
-	Box,	Button,	CssBaseline,
+	Box,	CssBaseline,
 	Container, Divider, Typography
 } from "@mui/material";
 
-import StartIcon from "@mui/icons-material/Start";
-
 import IntroText from "./components/IntroText";
 import NumberGrid from "./components/NumberGrid";
+import StartLottery from "./components/StartLottery";
 import WinningNumbers from "./components/WinningNumbers";
 import {
 	isDistinctNumber,
@@ -16,6 +15,7 @@ import {
 	numberPool
 } from "./utils";
 import configData from "./configData.json";
+
 
 function App () {
 	const [usersNumbers, setUsersNumbers] = useState([]);
@@ -65,15 +65,7 @@ function App () {
 					<Divider />
 
 					<Box sx={{ m: 3 }}>
-						<Button
-							variant="contained"
-							size="large"
-							sx={{ pl:4, pr:4 }}
-							endIcon={<StartIcon />}
-							onClick={handleStartLottery}
-						>
-						Start lottery
-						</Button>
+						<StartLottery handleStartLottery={handleStartLottery} usersNumbers={usersNumbers} />
 					</Box>
 
 					<Box sx={{ m: 3 }}>
