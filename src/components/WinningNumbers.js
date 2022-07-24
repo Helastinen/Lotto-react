@@ -15,7 +15,7 @@ const WinningNumbers = ({ winningNumbers }) => {
 					<Button
 						key={number}
 						variant="contained"
-						color="info"
+						color="secondary"
 						sx={{ m:1 }}
 					>
 						{number}
