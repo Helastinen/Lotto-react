@@ -4,10 +4,18 @@ import { render, screen } from "@testing-library/react";
 
 import WinningNumbers from "../components/WinningNumbers";
 
-test("WinningNumbers renders 7 distinct numbers", () => {
+describe("<WinningNumbers />", () => {
 	const winningNumbers = [1, 2, 3, 4, 5, 6, 7];
-	render(<WinningNumbers winningNumbers={winningNumbers} />);
-	screen.debug();
-	const element = screen.getByText(/1, 2, 3, 4, 5, 6, 7/);
-	expect(element).toBeDefined();
+
+	beforeEach(() => {
+		render(<WinningNumbers winningNumbers={winningNumbers} />);
+	});
+
+	test("renders 7 distinct numbers", async () => {
+		const buttonList = await screen.findAllByRole("button");
+		expect(buttonList.length).toBe(7);
+
+		expect(buttonList[0]).toHaveTextContent("1");
+		expect(buttonList[6]).toHaveTextContent("7");
+	});
 });

@@ -8,7 +8,6 @@ import StartIcon from "@mui/icons-material/Start";
 
 import IntroText from "./components/IntroText";
 import NumberGrid from "./components/NumberGrid";
-import UsersNumbers from "./components/UsersNumbers";
 import WinningNumbers from "./components/WinningNumbers";
 import {
 	isDistinctNumber,
@@ -22,17 +21,22 @@ function App () {
 	const [usersNumbers, setUsersNumbers] = useState([]);
 	const [winningNumbers, setWinningNumbers] = useState([]);
 
+
 	const handleSelectNumber = (event) => {
-		if ( !isDistinctNumber(Number(event.target.value), usersNumbers) ) {
-			return alert(`Number ${event.target.value} has already been selected!`);
+		const number = Number(event.target.value);
+
+		if ( isDistinctNumber(number, usersNumbers) ) {
+			if ( hasReachedNumberLimit(configData.usersSelectedNumberAmount, usersNumbers) ) {
+				return alert(`You have already selected all ${configData.usersSelectedNumberAmount} lotto numbers!`);
+			}
+
+			//toggleNumberSelection(number);
+			return setUsersNumbers(usersNumbers.concat(number));
 		}
 
-		if ( hasReachedNumberLimit(configData.usersSelectedNumberAmount, usersNumbers) ) {
-			return alert(`You have already selected all ${configData.usersSelectedNumberAmount} lotto numbers!`);
-		}
-
-		setUsersNumbers(usersNumbers.concat(Number(event.target.value)));
-		console.log("button", event.target.value, "selected");
+		//toggleNumberSelection(number);
+		setUsersNumbers(usersNumbers.filter(n => n !== number));
+		console.log("button", event.target.value, "pressed");
 	};
 
 	const handleStartLottery = () => {
@@ -56,13 +60,9 @@ function App () {
 
 					<Divider>Select your <b>seven</b> lucky lottery numbers</Divider>
 					<Box component="block">
-						<NumberGrid handleSelectNumber={handleSelectNumber} />
+						<NumberGrid handleSelectNumber={handleSelectNumber} usersNumbers={usersNumbers} />
 					</Box>
 					<Divider />
-
-					<Box sx={{ m: 3 }}>
-						<UsersNumbers usersNumbers={usersNumbers} />
-					</Box>
 
 					<Box sx={{ m: 3 }}>
 						<Button
