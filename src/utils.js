@@ -19,4 +19,6 @@ export const randomDrawnNumbers = (numberAmount, numberPool) => {
 	return shuffledPool.slice(0, numberAmount);
 };
 
-//export const usersCorrectNumbers =
+export const usersWinningNumbers = (usersNumbers, drawnNumbers) => {
+	return usersNumbers.filter(number => drawnNumbers.includes(number));
+};
