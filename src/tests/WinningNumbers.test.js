@@ -2,13 +2,13 @@
 import "@testing-library/jest-dom/extend-expect";
 import { render, screen } from "@testing-library/react";
 
-import WinningNumbers from "../components/WinningNumbers";
+import DrawnNumbers from "../components/DrawnNumbers";
 
-describe("<WinningNumbers />", () => {
-	const winningNumbers = [1, 2, 3, 4, 5, 6, 7];
+describe("<DrawnNumbers />", () => {
+	const drawnNumbers = [1, 2, 3, 4, 5, 6, 7];
 
 	beforeEach(() => {
-		render(<WinningNumbers winningNumbers={winningNumbers} />);
+		render(<DrawnNumbers drawnNumbers={drawnNumbers} />);
 	});
 
 	test("renders 7 distinct numbers", async () => {

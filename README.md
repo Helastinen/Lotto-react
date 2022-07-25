@@ -1,7 +1,7 @@
 ## Continue from here
 - User can change number selection. Done. add e2e-test?
 - UI: button toggle for users selected numbers. DONE. Add e2e-test?
-- Start Lottery button is disabled until seven numbers are selected.
+- Start Lottery button is disabled until seven numbers are selected. --> refactor?
 - check flexbox for usernumbers
 - user's Winning numbers are highlighted/shown.
 

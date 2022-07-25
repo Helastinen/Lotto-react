@@ -5,7 +5,7 @@ import {
 	numberPool,
 	isDistinctNumber,
 	hasReachedNumberLimit,
-	randomWinningNumbers
+	randomDrawnNumbers
 } from "../utils";
 
 const expectedNumberPool = [
@@ -38,11 +38,11 @@ test("hasReachedNumberLimit() returns true when number limit is hit", () => {
 	expect(hasReachedNumberLimit(numberLimit, sixUsersNumbers)).toEqual(false);
 });
 
-test("randomWinningNumbers() returns seven distinct winning numbers", () => {
-	const winningNumbers = randomWinningNumbers(numberLimit, expectedNumberPool);
-	expect(winningNumbers).toHaveLength(numberLimit);
+test("randomDrawnNumbers() returns seven distinct drawn numbers", () => {
+	const drawnNumbers = randomDrawnNumbers(numberLimit, expectedNumberPool);
+	expect(drawnNumbers).toHaveLength(numberLimit);
 
-	const winningNumbersSet = new Set(winningNumbers);
-	console.log("winningNumbersSet:", winningNumbersSet);
-	expect(winningNumbersSet.size).toEqual(winningNumbers.length);
+	const drawnNumbersSet = new Set(drawnNumbers);
+	console.log("drawnNumbersSet:", drawnNumbersSet);
+	expect(drawnNumbersSet.size).toEqual(drawnNumbers.length);
 });

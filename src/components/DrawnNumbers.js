@@ -1,15 +1,15 @@
 import { Button, Typography } from "@mui/material";
 
-const WinningNumbers = ({ winningNumbers }) => {
-	console.log("winningNumbers: ", winningNumbers);
-	if ( !winningNumbers || winningNumbers.length === 0 ) return null;
+const DrawnNumbers = ({ drawnNumbers }) => {
+	console.log("drawnNumbers: ", drawnNumbers);
+	if ( !drawnNumbers || drawnNumbers.length === 0 ) return null;
 
 	return (
 		<div>
 			<Typography variant="h5" m={1}>
-				Winning numbers:{" "}
+				Drawn numbers:{" "}
 			</Typography>
-			{winningNumbers
+			{drawnNumbers
 				.sort((a,b) => a - b )
 				.map(number =>
 					<Button
@@ -26,4 +26,4 @@ const WinningNumbers = ({ winningNumbers }) => {
 	);
 };
 
-export default WinningNumbers;
+export default DrawnNumbers;

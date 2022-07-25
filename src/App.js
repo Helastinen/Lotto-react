@@ -7,11 +7,11 @@ import {
 import IntroText from "./components/IntroText";
 import NumberGrid from "./components/NumberGrid";
 import StartLottery from "./components/StartLottery";
-import WinningNumbers from "./components/WinningNumbers";
+import DrawnNumbers from "./components/DrawnNumbers";
 import {
 	isDistinctNumber,
 	hasReachedNumberLimit,
-	randomWinningNumbers,
+	randomDrawnNumbers,
 	numberPool
 } from "./utils";
 import configData from "./configData.json";
@@ -19,7 +19,7 @@ import configData from "./configData.json";
 
 function App () {
 	const [usersNumbers, setUsersNumbers] = useState([]);
-	const [winningNumbers, setWinningNumbers] = useState([]);
+	const [drawnNumbers, setDrawnNumbers] = useState([]);
 
 
 	const handleSelectNumber = (event) => {
@@ -44,9 +44,9 @@ function App () {
 			return alert(`Please select all ${configData.usersSelectedNumberAmount} lotto numbers!`);
 		}
 
-		const numbers = randomWinningNumbers(configData.winningNumberAmount, numberPool(configData.numberPool));
-		setWinningNumbers(numbers);
-		console.log("WinningNumbers: ", winningNumbers);
+		const numbers = randomDrawnNumbers(configData.drawnNumberAmount, numberPool(configData.numberPool));
+		setDrawnNumbers(numbers);
+		console.log("DrawnNumbers: ", drawnNumbers);
 	};
 
 	return (
@@ -69,7 +69,7 @@ function App () {
 					</Box>
 
 					<Box sx={{ m: 3 }}>
-						<WinningNumbers winningNumbers={winningNumbers} />
+						<DrawnNumbers drawnNumbers={drawnNumbers} />
 					</Box>
 				</Box>
 			</Container>

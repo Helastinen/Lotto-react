@@ -10,7 +10,7 @@ export const hasReachedNumberLimit = (limit, numberArray) => {
 	return numberArray.length >= limit ? true : false;
 };
 
-export const randomWinningNumbers = (numberAmount, numberPool) => {
+export const randomDrawnNumbers = (numberAmount, numberPool) => {
 	let shuffledPool = numberPool
 		.map(number => ({ number, sort: Math.random() }))
 		.sort((a, b) => a.sort - b.sort)
@@ -18,3 +18,5 @@ export const randomWinningNumbers = (numberAmount, numberPool) => {
 
 	return shuffledPool.slice(0, numberAmount);
 };
+
+//export const usersCorrectNumbers =
