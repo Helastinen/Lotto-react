@@ -1,7 +1,7 @@
 import { Button, List, ListItem } from "@mui/material";
 
 import { numberPool } from "../utils";
-import configData from "../configData.json";
+import config from "../configData.json";
 
 const LottoNumber = ({ number, usersNumbers, handleSelectNumber }) => {
 	let currentVariant = "outlined";
@@ -28,7 +28,7 @@ const LottoNumber = ({ number, usersNumbers, handleSelectNumber }) => {
 };
 
 const NumberGrid = ({ usersNumbers, handleSelectNumber }) => {
-	const lottoNumbers = numberPool(configData.numberPool);
+	const lottoNumbers = numberPool(config.numberPool);
 	//console.log("lottonumbers array:", lottoNumbers);
 
 	return (
