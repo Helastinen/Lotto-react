@@ -14,7 +14,7 @@ import {
 	randomDrawnNumbers,
 	numberPool
 } from "./utils";
-import configData from "./configData.json";
+import config from "./configData.json";
 
 
 function App () {
@@ -26,8 +26,8 @@ function App () {
 		const number = Number(event.target.value);
 
 		if ( isDistinctNumber(number, usersNumbers) ) {
-			if ( hasReachedNumberLimit(configData.usersSelectedNumberAmount, usersNumbers) ) {
-				return alert(`You have already selected all ${configData.usersSelectedNumberAmount} lotto numbers!`);
+			if ( hasReachedNumberLimit(config.usersSelectedNumberAmount, usersNumbers) ) {
+				return alert(`You have already selected all ${config.usersSelectedNumberAmount} lotto numbers!`);
 			}
 
 			//toggleNumberSelection(number);
@@ -40,11 +40,11 @@ function App () {
 	};
 
 	const handleStartLottery = () => {
-		if ( !hasReachedNumberLimit(configData.usersSelectedNumberAmount, usersNumbers) ) {
-			return alert(`Please select all ${configData.usersSelectedNumberAmount} lotto numbers!`);
+		if ( !hasReachedNumberLimit(config.usersSelectedNumberAmount, usersNumbers) ) {
+			return alert(`Please select all ${config.usersSelectedNumberAmount} lotto numbers!`);
 		}
 
-		const numbers = randomDrawnNumbers(configData.drawnNumberAmount, numberPool(configData.numberPool));
+		const numbers = randomDrawnNumbers(config.drawnNumberAmount, numberPool(config.numberPool));
 		setDrawnNumbers(numbers);
 		console.log("DrawnNumbers: ", drawnNumbers);
 	};

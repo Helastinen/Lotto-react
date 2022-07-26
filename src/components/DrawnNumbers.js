@@ -1,7 +1,6 @@
 import { Button, Typography } from "@mui/material";
 
 const DrawnNumbers = ({ drawnNumbers }) => {
-	console.log("drawnNumbers: ", drawnNumbers);
 	if ( !drawnNumbers || drawnNumbers.length === 0 ) return null;
 
 	return (

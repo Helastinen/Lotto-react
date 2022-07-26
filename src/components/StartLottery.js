@@ -1,9 +1,10 @@
 import { Button } from "@mui/material";
 import StartIcon from "@mui/icons-material/Start";
+import config from "../configData.json";
 
 const StartLottery = ({ handleStartLottery, usersNumbers }) => {
 
-	if (!usersNumbers || usersNumbers.length < 7 ) {
+	if (!usersNumbers || usersNumbers.length < config.usersSelectedNumberAmount ) {
 		return (
 			<Button
 				variant="contained"
