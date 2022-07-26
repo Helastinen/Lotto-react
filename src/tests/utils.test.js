@@ -48,10 +48,10 @@ test("randomDrawnNumbers() returns seven distinct drawn numbers", () => {
 	expect(drawnNumbersSet.size).toEqual(drawnNumbers.length);
 });
 
-test.only("usersWinningNumbers() returns only winning numbers", () => {
+test("usersWinningNumbers() returns only winning numbers", () => {
 	const drawnNumbers = [22, 2, 7, 11, 12, 15, 30 ];
 	const winningNumbers = usersWinningNumbers(usersNumbers, drawnNumbers);
 	console.log("winningNumbers: ", winningNumbers);
-	expect(winningNumbers).toHaveLength(3);
 
+	expect(winningNumbers).toHaveLength(3);
 });

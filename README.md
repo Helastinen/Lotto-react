@@ -1,9 +1,10 @@
 ## Continue from here
 - User can change number selection. Done. add e2e-test?
 - UI: button toggle for users selected numbers. DONE. Add e2e-test?
-- Start Lottery button is disabled until seven numbers are selected. --> refactor?
+- user's winning numbers are shown in number grid.
 - check flexbox for usernumbers
-- user's Winning numbers are highlighted/shown.
+- inform user that they can start a new round.
+- show round number in UI.
 
 ## Purpose
 - Learn to create a single page react app in practise

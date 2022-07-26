@@ -8,6 +8,8 @@ import IntroText from "./components/IntroText";
 import NumberGrid from "./components/NumberGrid";
 import StartLottery from "./components/StartLottery";
 import DrawnNumbers from "./components/DrawnNumbers";
+import WinningNumbers from "./components/WinningNumbers";
+
 import {
 	isDistinctNumber,
 	hasReachedNumberLimit,
@@ -21,7 +23,6 @@ function App () {
 	const [usersNumbers, setUsersNumbers] = useState([]);
 	const [drawnNumbers, setDrawnNumbers] = useState([]);
 
-
 	const handleSelectNumber = (event) => {
 		const number = Number(event.target.value);
 
@@ -30,11 +31,9 @@ function App () {
 				return alert(`You have already selected all ${config.usersSelectedNumberAmount} lotto numbers!`);
 			}
 
-			//toggleNumberSelection(number);
 			return setUsersNumbers(usersNumbers.concat(number));
 		}
 
-		//toggleNumberSelection(number);
 		setUsersNumbers(usersNumbers.filter(n => n !== number));
 		console.log("button", event.target.value, "pressed");
 	};
@@ -70,6 +69,10 @@ function App () {
 
 					<Box sx={{ m: 3 }}>
 						<DrawnNumbers drawnNumbers={drawnNumbers} />
+					</Box>
+
+					<Box sx={{ m: 3 }}>
+						<WinningNumbers drawnNumbers={drawnNumbers} usersNumbers={usersNumbers} />
 					</Box>
 				</Box>
 			</Container>

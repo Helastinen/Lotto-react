@@ -19,6 +19,6 @@ export const randomDrawnNumbers = (numberAmount, numberPool) => {
 	return shuffledPool.slice(0, numberAmount);
 };
 
-export const usersWinningNumbers = (usersNumbers, drawnNumbers) => {
+export const usersWinningNumbers = (drawnNumbers, usersNumbers) => {
 	return usersNumbers.filter(number => drawnNumbers.includes(number));
 };
