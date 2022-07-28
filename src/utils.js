@@ -20,5 +20,9 @@ export const randomDrawnNumbers = (numberAmount, numberPool) => {
 };
 
 export const usersWinningNumbers = (drawnNumbers, usersNumbers) => {
+	if ( !drawnNumbers || !usersNumbers ) {
+		return null;
+	}
+
 	return usersNumbers.filter(number => drawnNumbers.includes(number));
 };

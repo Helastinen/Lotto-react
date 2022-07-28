@@ -1,11 +1,17 @@
-import { Button, List, ListItem } from "@mui/material";
+import { Badge, Button, List, ListItem } from "@mui/material";
 
-import { numberPool } from "../utils";
+import { numberPool, usersWinningNumbers } from "../utils";
 import config from "../configData.json";
 
-const LottoNumber = ({ number, usersNumbers, handleSelectNumber }) => {
+const LottoNumber = ({ number, usersNumbers, winningNumbers, handleSelectNumber }) => {
+	let badgeContent = 0;
+	if ( winningNumbers && winningNumbers.includes(number) ) {
+		badgeContent = "win";
+	}
+
+
 	let currentVariant = "outlined";
-	if ( usersNumbers.includes(number) ) {
+	if ( usersNumbers && usersNumbers.includes(number) ) {
 		currentVariant = "contained";
 	}
 
@@ -16,20 +22,23 @@ const LottoNumber = ({ number, usersNumbers, handleSelectNumber }) => {
 			padding: 5,
 			margin: 5,
 		}}>
-			<Button
-				variant={currentVariant}
-				value={number}
-				onClick={handleSelectNumber}
-			>
-				{number}
-			</Button>
+			<Badge badgeContent={badgeContent} overlap="circular" color="success">
+				<Button
+					variant={currentVariant}
+					value={number}
+					onClick={handleSelectNumber}
+				>
+					{number}
+				</Button>
+			</Badge>
 		</ListItem>
 	);
 };
 
-const NumberGrid = ({ usersNumbers, handleSelectNumber }) => {
+const NumberGrid = ({ drawnNumbers, usersNumbers, handleSelectNumber }) => {
 	const lottoNumbers = numberPool(config.numberPool);
-	//console.log("lottonumbers array:", lottoNumbers);
+	const winningNumbers = usersWinningNumbers(drawnNumbers, usersNumbers);
+	console.log("Numbergrid.js -> <NumberGrid/> -> winningNumbers: ", winningNumbers);
 
 	return (
 		<div>
@@ -39,6 +48,7 @@ const NumberGrid = ({ usersNumbers, handleSelectNumber }) => {
 						key={number}
 						number={number}
 						usersNumbers={usersNumbers}
+						winningNumbers={winningNumbers}
 						handleSelectNumber={handleSelectNumber}
 					/>
 				)}

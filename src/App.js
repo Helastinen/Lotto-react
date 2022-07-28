@@ -22,6 +22,7 @@ import config from "./configData.json";
 function App () {
 	const [usersNumbers, setUsersNumbers] = useState([]);
 	const [drawnNumbers, setDrawnNumbers] = useState([]);
+	console.log("App.js -> drawnNumbers: ", drawnNumbers);
 
 	const handleSelectNumber = (event) => {
 		const number = Number(event.target.value);
@@ -35,7 +36,7 @@ function App () {
 		}
 
 		setUsersNumbers(usersNumbers.filter(n => n !== number));
-		console.log("button", event.target.value, "pressed");
+		//console.log("button", event.target.value, "pressed");
 	};
 
 	const handleStartLottery = () => {
@@ -43,9 +44,9 @@ function App () {
 			return alert(`Please select all ${config.usersSelectedNumberAmount} lotto numbers!`);
 		}
 
-		const numbers = randomDrawnNumbers(config.drawnNumberAmount, numberPool(config.numberPool));
-		setDrawnNumbers(numbers);
-		console.log("DrawnNumbers: ", drawnNumbers);
+		const lotteryDrawNumbers = randomDrawnNumbers(config.drawnNumberAmount, numberPool(config.numberPool));
+		console.log("App.js -> handleStartLottery() -> lotteryDrawNumbers: ", lotteryDrawNumbers);
+		setDrawnNumbers(lotteryDrawNumbers);
 	};
 
 	return (
@@ -59,7 +60,11 @@ function App () {
 
 					<Divider>Select your <b>seven</b> lucky lottery numbers</Divider>
 					<Box component="block">
-						<NumberGrid handleSelectNumber={handleSelectNumber} usersNumbers={usersNumbers} />
+						<NumberGrid
+							handleSelectNumber={handleSelectNumber}
+							drawnNumbers={drawnNumbers}
+							usersNumbers={usersNumbers}
+						/>
 					</Box>
 					<Divider />
 
@@ -72,7 +77,7 @@ function App () {
 					</Box>
 
 					<Box sx={{ m: 3 }}>
-						<WinningNumbers drawnNumbers={drawnNumbers} usersNumbers={usersNumbers} />
+						<WinningNumbers drawnNumbers={drawnNumbers} usersNumbers={usersNumbers}/>
 					</Box>
 				</Box>
 			</Container>
