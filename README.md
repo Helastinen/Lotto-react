@@ -1,7 +1,6 @@
 ## Continue from here
 - User can change number selection. Done. add e2e-test?
 - UI: button toggle for users selected numbers. DONE. Add e2e-test?
-- user's winning numbers are shown in number grid.
 - check flexbox for usernumbers
 - inform user that they can start a new round.
 - show round number in UI.
