@@ -1,4 +1,4 @@
-import { Badge, Button, List, ListItem } from "@mui/material";
+import { Badge, Button, Card, List, ListItem } from "@mui/material";
 
 import { numberPool, usersWinningNumbers } from "../utils";
 import config from "../configData.json";
@@ -42,17 +42,19 @@ const NumberGrid = ({ drawnNumbers, usersNumbers, handleSelectNumber }) => {
 
 	return (
 		<div>
-			<List>
-				{lottoNumbers.map(number =>
-					<LottoNumber
-						key={number}
-						number={number}
-						usersNumbers={usersNumbers}
-						winningNumbers={winningNumbers}
-						handleSelectNumber={handleSelectNumber}
-					/>
-				)}
-			</List>
+			<Card sx={{ padding: 2 }} >
+				<List>
+					{lottoNumbers.map(number =>
+						<LottoNumber
+							key={number}
+							number={number}
+							usersNumbers={usersNumbers}
+							winningNumbers={winningNumbers}
+							handleSelectNumber={handleSelectNumber}
+						/>
+					)}
+				</List>
+			</Card>
 		</div>
 	);
 };

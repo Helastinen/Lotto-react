@@ -1,12 +1,10 @@
 import{ useState } from  "react";
-import {
-	Box,	CssBaseline,
-	Container, Divider, Typography
-} from "@mui/material";
+import { Box,	CssBaseline, Grid, Container } from "@mui/material";
 
 import IntroText from "./components/IntroText";
-import NumberGrid from "./components/NumberGrid";
 import StartLottery from "./components/StartLottery";
+import ButtonPopOver from "./components/ButtonPopover";
+import NumberGrid from "./components/NumberGrid";
 import DrawnNumbers from "./components/DrawnNumbers";
 import WinningNumbers from "./components/WinningNumbers";
 
@@ -55,10 +53,22 @@ function App () {
 
 			<Container maxWidth="md" align="center">
 				<Box sx={{ bgcolor: "#f5f5f5", m:2, p:2 }}>
-					<Typography variant="h3" m={3}>$uperLottery</Typography>
 					<IntroText />
 
-					<Divider>Select your <b>seven</b> lucky lottery numbers</Divider>
+					<Box sx={{ m: 3 }}>
+						<Grid container spacing={2} justifyContent="center" >
+							<Grid item sx={8}>
+								<StartLottery
+									handleStartLottery={handleStartLottery}
+									usersNumbers={usersNumbers}
+								/>
+							</Grid>
+							<Grid item sx={4}>
+								<ButtonPopOver />
+							</Grid>
+						</Grid>
+					</Box>
+
 					<Box component="block">
 						<NumberGrid
 							handleSelectNumber={handleSelectNumber}
@@ -66,20 +76,21 @@ function App () {
 							usersNumbers={usersNumbers}
 						/>
 					</Box>
-					<Divider />
 
-					<Box sx={{ m: 3 }}>
-						<StartLottery handleStartLottery={handleStartLottery} usersNumbers={usersNumbers} />
-					</Box>
-
-					<Box sx={{ m: 3 }}>
-						<DrawnNumbers drawnNumbers={drawnNumbers} />
-					</Box>
-
-					<Box sx={{ m: 3 }}>
-						<WinningNumbers drawnNumbers={drawnNumbers} usersNumbers={usersNumbers}/>
-					</Box>
+					<Grid container spacing={2}>
+						<Grid item sx={6}>
+							<Box sx={{ m: 2 }}>
+								<DrawnNumbers drawnNumbers={drawnNumbers} />
+							</Box>
+						</Grid>
+						<Grid item sx={6}>
+							<Box sx={{ m: 2 }}>
+								<WinningNumbers drawnNumbers={drawnNumbers} usersNumbers={usersNumbers}/>
+							</Box>
+						</Grid>
+					</Grid>
 				</Box>
+
 			</Container>
 		</>
 	);
